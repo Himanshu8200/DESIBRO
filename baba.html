@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DESI BROS — Home</title>
+  <meta name="description" content="DESI BROS - Authentic local flavours & services.">
+  <!-- Google Font (will load if online) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --accent:#f59e0b; /* saffron-ish */
+      --muted:#94a3b8;
+      --glass: rgba(255,255,255,0.03);
+      --radius:14px;
+      --maxw:1100px;
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:'Poppins',system-ui,Segoe UI,Roboto,Arial,sans-serif;
+      background:linear-gradient(180deg,#071026 0%, #071a2b 60%);
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      padding:24px;
+      display:flex;
+      justify-content:center;
+    }
+    .wrap{
+      width:100%;
+      max-width:var(--maxw);
+    }
+
+    /* Header / Nav */
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:22px;
+    }
+    .brand{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      text-decoration:none;
+      color:inherit;
+    }
+    .logo{
+      width:52px;height:52px;border-radius:12px;
+      background:linear-gradient(135deg,var(--accent),#ef4444);
+      display:flex;align-items:center;justify-content:center;
+      font-weight:700;font-size:20px;color:#071026;box-shadow:0 6px 18px rgba(0,0,0,0.4);
+    }
+    nav{display:flex;gap:12px;align-items:center}
+    nav a{
+      color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:10px;font-weight:600;font-size:14px;
+    }
+    nav a:hover{color:var(--accent);background:var(--glass)}
+
+    /* Hero */
+    .hero{
+      display:grid;
+      grid-template-columns:1fr 420px;
+      gap:28px;
+      align-items:center;
+      margin-bottom:28px;
+    }
+    .hero-card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:var(--radius);
+      padding:28px;
+      box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+      border:1px solid rgba(255,255,255,0.03);
+    }
+    h1{margin:0 0 8px 0;font-size:34px;letter-spacing:-0.4px}
+    p.lead{margin:0 0 18px 0;color:var(--muted);font-size:15px}
+    .cta-row{display:flex;gap:12px;align-items:center}
+    .btn{
+      background:linear-gradient(90deg,var(--accent),#ff7a18);
+      color:#071026;padding:10px 16px;border-radius:10px;border:none;font-weight:700;
+      cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;
+    }
+    .btn.ghost{background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,0.04)}
+
+    /* Quick info */
+    .stats{display:flex;gap:12px;margin-top:16px}
+    .stat{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:10px 14px;border-radius:12px;font-weight:600;color:var(--muted)}
+    .hero-img{
+      background:
+        radial-gradient(800px 400px at 10% 20%, rgba(245,158,11,0.08), transparent 10%),
+        linear-gradient(135deg, rgba(255,255,255,0.02), transparent);
+      border-radius:var(--radius);
+      padding:18px;
+    }
+    .product-preview{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.05));
+      border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:12px;
+    }
+    .product-preview .item{
+      display:flex;gap:12px;align-items:center;
+    }
+    .item .thumb{
+      width:72px;height:64px;border-radius:10px;background:linear-gradient(135deg,#f97316,#ef4444);
+      display:flex;align-items:center;justify-content:center;font-weight:700;color:#071026;
+    }
+
+    /* Sections */
+    section{margin-bottom:22px}
+    .grid{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:14px;
+    }
+    .card{
+      background:var(--card);padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.02);
+      box-shadow: 0 6px 18px rgba(2,6,23,0.5);
+    }
+    .card h3{margin:0 0 8px 0}
+    .muted{color:var(--muted);font-size:14px}
+
+    /* Contact */
+    form{display:grid;gap:10px}
+    input,textarea{
+      background:transparent;border:1px solid rgba(255,255,255,0.04);padding:10px;border-radius:8px;color:inherit;
+      outline:none;font-size:14px;
+    }
+    input::placeholder,textarea::placeholder{color:rgba(230,238,248,0.45)}
+    .row{display:flex;gap:12px}
+    .row .col{flex:1}
+
+    footer{display:flex;justify-content:space-between;align-items:center;padding-top:10px;color:var(--muted);font-size:13px;border-top:1px dashed rgba(255,255,255,0.02);padding-top:18px}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:600px){
+      body{padding:16px}
+      .grid{grid-template-columns:1fr}
+      nav{display:none}
+      header{gap:8px}
+      h1{font-size:28px}
+      .logo{width:44px;height:44px;font-size:18px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="#">
+        <div class="logo">DB</div>
+        <div>
+          <div style="font-weight:700">DESI BROS</div>
+          <div style="font-size:12px;color:var(--muted)">local flavours • fast service</div>
+        </div>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#menu">Menu</a>
+        <a href="#contact">Contact</a>
+        <a class="btn" href="#order">Order Now</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-card">
+        <h1>Welcome to DESI BROS</h1>
+        <p class="lead">Authentic taste, desi vibes. We bring local recipes with a modern twist — for home delivery, events, and bulk orders.</p>
+
+        <div class="cta-row">
+          <a class="btn" href="#menu">View Menu</a>
+          <a class="btn ghost" href="#contact">Get In Touch</a>
+        </div>
+
+        <div class="stats" aria-hidden="true">
+          <div class="stat">⭐ 4.8 Rating</div>
+          <div class="stat">🚚 Fast Delivery</div>
+          <div class="stat">🥘 Fresh Daily</div>
+        </div>
+
+        <hr style="border:none;border-top:1px solid rgba(255,255,255,0.02);margin:18px 0">
+
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <div style="min-width:160px;">
+            <strong>Open:</strong>
+            <div class="muted">Mon–Sun · 10:00 — 22:30</div>
+          </div>
+          <div style="min-width:160px;">
+            <strong>Location:</strong>
+            <div class="muted">Ahmedabad / Local delivery</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-img">
+        <div class="product-preview">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <strong>Popular items</strong>
+            <span class="muted">Top sellers</span>
+          </div>
+
+          <div class="item">
+            <div class="thumb">1</div>
+            <div>
+              <div style="font-weight:700">Masala Dabba Thali</div>
+              <div class="muted">Classic home-style platter</div>
+            </div>
+            <div style="margin-left:auto;font-weight:700">₹199</div>
+          </div>
+
+          <div class="item">
+            <div class="thumb">2</div>
+            <div>
+              <div style="font-weight:700">Desi Burger</div>
+              <div class="muted">Spicy potato & chutney</div>
+            </div>
+            <div style="margin-left:auto;font-weight:700">₹129</div>
+          </div>
+
+          <div class="item">
+            <div class="thumb">3</div>
+            <div>
+              <div style="font-weight:700">Garam Chai (500ml)</div>
+              <div class="muted">Cardamom + jaggery</div>
+            </div>
+            <div style="margin-left:auto;font-weight:700">₹39</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Services -->
+    <section id="services">
+      <h2 style="margin-top:0">What we do</h2>
+      <div class="grid" role="list">
+        <div class="card" role="listitem">
+          <h3>Home Delivery</h3>
+          <p class="muted">Fast, hygienic delivery across local zones. Track orders via phone.</p>
+        </div>
+        <div class="card" role="listitem">
+          <h3>Catering</h3>
+          <p class="muted">Events, parties or office lunches — custom menus, bulk pricing.</p>
+        </div>
+        <div class="card" role="listitem">
+          <h3>Custom Orders</h3>
+          <p class="muted">Diet-friendly and spice-level adjustments on request.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Menu / Products -->
+    <section id="menu">
+      <h2>Menu highlights</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Masala Dabba Thali</h3>
+          <p class="muted">Rice, dal, 2 sabzi, roti, chutney, papad — ₹199</p>
+        </div>
+        <div class="card">
+          <h3>Desi Burger</h3>
+          <p class="muted">Aloo tikki, achar, special sauce — ₹129</p>
+        </div>
+        <div class="card">
+          <h3>Garam Chai</h3>
+          <p class="muted">Cardamom black tea with jaggery — ₹39</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact / Order -->
+    <section id="contact">
+      <h2>Contact & Orders</h2>
+      <div style="display:grid;grid-template-columns:1fr 360px;gap:16px">
+        <div class="card">
+          <form id="contactForm" onsubmit="handleSubmit(event)">
+            <label>
+              Name
+              <input type="text" id="name" placeholder="Your name" required>
+            </label>
+            <label>
+              Phone or Email
+              <input type="text" id="contact" placeholder="Phone / Email" required>
+            </label>
+            <label>
+              Message (order details / queries)
+              <textarea id="message" rows="5" placeholder="Example: 10 Masala Dabba Thali for tomorrow, 1pm" required></textarea>
+            </label>
+            <div style="display:flex;gap:10px;margin-top:6px">
+              <button class="btn" type="submit">Send Order</button>
+              <a class="btn ghost" href="mailto:desibros@example.com?subject=Order%20from%20website">Email Us</a>
+            </div>
+          </form>
+          <small class="muted">Note: This demo form triggers an email popup using JavaScript. Replace mail handling with your backend when ready.</small>
+        </div>
+
+        <div class="card">
+          <h3>Quick info</h3>
+          <p class="muted"><strong>Phone:</strong> +91 99XXXXXXXX</p>
+          <p class="muted"><strong>Address:</strong> Your local area, Ahmedabad</p>
+          <p class="muted"><strong>Follow:</strong> Facebook / Instagram / WhatsApp</p>
+          <div style="height:12px"></div>
+          <a class="btn" id="order" href="#contact">Place Order</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <strong>DESI BROS</strong> — Made with ❤️</div>
+      <div class="muted">Built for local tastes • Ahmedabad</div>
+    </footer>
+  </div>
+
+  <script>
+    function handleSubmit(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const contact = document.getElementById('contact').value.trim();
+      const msg = document.getElementById('message').value.trim();
+      const subject = encodeURIComponent('DESI BROS Order from ' + name);
+      const body = encodeURIComponent('Name: ' + name + '\\nContact: ' + contact + '\\n\\nOrder details:\\n' + msg);
+      // Opens user's default mail client with prefilled message. Replace with AJAX POST to your server for production.
+      window.location.href = `mailto:desibros@example.com?subject=${subject}&body=${body}`;
+    }
+  </script>
+</body>
+</html>
